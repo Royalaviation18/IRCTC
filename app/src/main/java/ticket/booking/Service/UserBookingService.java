@@ -5,7 +5,7 @@ import ticket.booking.Entity.User;
 public class UserBookingService {
     private User user;
 
-    public UserBookingService(User user) {
-
+    public UserBookingService(User user1) {
+        this.user = user1;
     }
 }
