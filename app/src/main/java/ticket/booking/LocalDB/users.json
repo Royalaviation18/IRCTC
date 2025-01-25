@@ -9,7 +9,7 @@
         "destination": "Delhi",
         "date_of_travel": "2025-01-01T18:30:00Z",
         "train": {
-          "train_id": "train123",
+          "train_id": "bacs",
           "train_no": 12345,
           "seats": [
             [0,0,0,0,0,0],
