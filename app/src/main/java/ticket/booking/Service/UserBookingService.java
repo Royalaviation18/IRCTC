@@ -6,6 +6,8 @@ import ticket.booking.Entity.User;
 import java.io.File;
 
 public class UserBookingService {
+
+    //global user which can be used by any function
     private User user;
 
     // object mapper is used to serialize and deserialize
