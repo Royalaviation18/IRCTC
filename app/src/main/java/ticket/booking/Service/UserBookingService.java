@@ -94,12 +94,8 @@ public class UserBookingService {
     }
 
     public List<Train> getTrains(String source,String destination){
-        try{
-            TrainService trainService = new TrainService();
-            return trainService.searchTrains(source,destination);
-        }catch (IOException ex){
-
-        }
+        TrainService trainService = new TrainService();
+        return trainService.searchTrains(source,destination);
     }
 
 }
