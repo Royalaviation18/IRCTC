@@ -76,6 +76,7 @@ public class UserBookingService {
         user.printTickets();
     }
 
+    //function to cancel booking
     public Boolean cancelBooking(String ticketId) {
         if (ticketId == null || ticketId.isEmpty()) {
             System.out.println("Ticket ID cannot be null or empty");
@@ -93,6 +94,7 @@ public class UserBookingService {
         }
     }
 
+    //function to search trains between stations
     public List<Train> getTrains(String source,String destination){
         TrainService trainService = new TrainService();
         return trainService.searchTrains(source,destination);
