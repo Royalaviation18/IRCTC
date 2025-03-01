@@ -8,10 +8,8 @@ import ticket.booking.util.UserServiceUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
 
 public class UserBookingService {
 
