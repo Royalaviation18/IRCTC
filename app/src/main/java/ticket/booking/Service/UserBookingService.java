@@ -93,9 +93,34 @@ public class UserBookingService {
     }
 
     //function to search trains between stations
-    public List<Train> getTrains(String source,String destination){
+    public List<Train> getTrains(String source, String destination) throws IOException {
         TrainService trainService = new TrainService();
-        return trainService.searchTrains(source,destination);
+        return trainService.searchTrains(source, destination);
+    }
+
+    public List<List<Integer>> fetchSeats(Train train) {
+        return train.getSeats();
+    }
+
+    public Boolean bookTrainSeat(Train train, int row, int seat) {
+        try {
+            TrainService trainService = new TrainService();
+            List<List<Integer>> seats = train.getSeats();
+            if (row >= 0 && row < seats.size() && seat >= 0 && seat < seats.get(row).size()) {
+                if (seats.get(row).get(seat) == 0) {
+                    seats.get(row).set(seat, 1);
+                    train.setSeats(seats);
+                    trainService.addTrain(train);
+                    return true; // Booking successful
+                } else {
+                    return false; // Seat is already booked
+                }
+            } else {
+                return false; // Invalid row or seat index
+            }
+        } catch (IOException ex) {
+            return Boolean.FALSE;
+        }
     }
 
 }
